@@ -1,0 +1,21 @@
+.banner,
+.search,
+.count {
+    text-align: center
+}
+
+.count,
+.banner,
+#submit {
+    font-family: 'Caveat Brush', cursive;
+}
+
+.banner {
+    height: 7em;
+    margin-top: 11em;
+}
+
+.display li {
+    text-align: center;
+    display: inline;
+}
