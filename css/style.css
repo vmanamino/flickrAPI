@@ -19,7 +19,52 @@
 .loading .inner {
     width: 20%;
     height: 100%;
-    background-color: lightblue;
+    -webkit-animation: slide 1s infinite alternate,
+                        rgb 1s infinite alternate;
+    animation: slide 1s infinite alternate,
+                        rgb 1s infinite alternate;
+}
+
+@-webkit-keyframes slide {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 80%;
+    }
+}
+
+@keyframes slide {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 80%;
+    }
+}
+
+@-webkit-keyframes rgb {
+    from {
+        background-color: red;
+    }
+    50% {
+        background-color: blue;
+    }
+    to {
+        background-color: green;
+    }
+}
+
+@keyframes rgb {
+    from {
+        background-color: red;
+    }
+    50% {
+        background-color: blue;
+    }
+    to {
+        background-color: green;
+    }
 }
 
 .banner h1 {
@@ -61,30 +106,35 @@
     display: inline;
 }
 
+.display li {
+    display: inline;
+     -webkit-animation-name: myResults;
+     -webkit-animation-delay: 5s;
+     -webkit-animation-fill-mode: both;
+    animation-name: myResults;
+    animation-delay: 5s;
+    animation-fill-mode: both;
+}
+
 @-webkit-keyframes myResults {
-    from {
-        display: none;
+    0% {
+        opacity: 0;
     }
+    
     to {
-        display:inline;
+        opacity: 1;
     }
 }
 
 @keyframes myResults {
-    from {
-        display: none;
+    0% {
+        opacity: 0;
     }
-    to {
-        display:inline;
+    
+    100% {
+        opacity: 1;
+        margin-bottom: auto;
     }
-}
-
-.display li {
-    display: inline;
-    /* -webkit-animation-name: myResults;*/
-    /* -webkit-animation-delay: 10s;*/
-    /*animation-name: myResults;*/
-    /*animation-delay: 10s;*/
 }
 
 

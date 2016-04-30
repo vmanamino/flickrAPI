@@ -18,14 +18,14 @@
         </form>
     </div>
     <div class="count" ng-if="results">
-        <div class="loading">
+        <div class="loading" ng-if="getting">
             <div class="inner"></div>
         </div>
         <p>Got {{results.length}} results for " {{ tag }} "</p>
     </div>
-    <div class="results">
-        <ul class="display" ng-repeat="result in results">
-            <li><img ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" alt="flickr photo"/></li>
+    <div class="results" ng-if="results">
+        <ul class="display">
+            <li ng-repeat="result in results"><img ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" alt="flickr photo"/></li>
         </ul>
     </div>
     

@@ -2,7 +2,19 @@ angular.module("myApp", ['ngAnimate'])
 .config(function($httpProvider) {
 	$httpProvider.defaults.useXDomain = true;
 })
-    .controller("myCtrl", function($scope, $http, $sce){
+    .controller("myCtrl", function($scope, $http, $sce, $q, $timeout){
+        
+        //getting the response
+        $scope.getting = false;
+        
+        // delay disappearance of loading bar
+        var wait = function(){
+            var defer = $q.defer();
+            $timeout(function(){
+                defer.resolve();
+            }, 5000); // 5 seconds corresponds to animation myResults
+            return defer.promise;
+        };
         
         /* build URLs of this form */
         // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -39,6 +51,10 @@ angular.module("myApp", ['ngAnimate'])
             function(response){
                 alert("error");
             };
+            $scope.getting = true;
+            wait().then(function(){
+                $scope.getting = false;
+            });
 	    };
         
     })
