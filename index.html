@@ -18,7 +18,9 @@
         </form>
     </div>
     <div class="count" ng-if="results">
-        <p></p>
+        <div class="loading">
+            <div class="inner"></div>
+        </div>
         <p>Got {{results.length}} results for " {{ tag }} "</p>
     </div>
     <div class="results">

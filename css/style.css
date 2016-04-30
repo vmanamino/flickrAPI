@@ -1,12 +1,25 @@
 .banner,
 .search,
 .count {
-    text-align: center
+    text-align: center;
 }
 
 .count {
     margin-top: 3em;
     margin-bottom: 3em;
+}
+
+.loading {
+    margin-left: 62em;
+    width: 100px;
+    height: 20px;
+    border: 4px groove gray;
+}
+
+.loading .inner {
+    width: 20%;
+    height: 100%;
+    background-color: lightblue;
 }
 
 .banner h1 {
@@ -48,6 +61,30 @@
     display: inline;
 }
 
+@-webkit-keyframes myResults {
+    from {
+        display: none;
+    }
+    to {
+        display:inline;
+    }
+}
+
+@keyframes myResults {
+    from {
+        display: none;
+    }
+    to {
+        display:inline;
+    }
+}
+
 .display li {
     display: inline;
+    /* -webkit-animation-name: myResults;*/
+    /* -webkit-animation-delay: 10s;*/
+    /*animation-name: myResults;*/
+    /*animation-delay: 10s;*/
 }
+
+
