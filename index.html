@@ -13,21 +13,17 @@
         <h1>Flickr Searcher</h1>
     </div>
     <div class="search">
-        <form name="myForm" ng-submit="submit()">
-            <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="&#x25cf;"/>
+        <form name="myForm" ng-submit="flickr()">
+            <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="+"/>
         </form>
     </div>
-    <div class="count">
-        <p>{{tag}}</p>
-        <p>Got # results for Query</p>
+    <div class="count" ng-if="results">
+        <p></p>
+        <p>Got {{results.length}} results for " {{ tag }} "</p>
     </div>
     <div class="results">
-        <ul class="display">
-            <li><p>item 1</p></li>
-            <li><p>item 1</p></li>
-            <li><p>item 1</p></li>
-            <li><p>item 1</p></li>
-            <li><p>item 1</p></li>
+        <ul class="display" ng-repeat="result in results">
+            <li><img ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" alt="flickr photo"/></li>
         </ul>
     </div>
     
