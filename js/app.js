@@ -36,7 +36,7 @@ angular.module("myApp", ['ngAnimate'])
                 api_key: "852cfd93b491490693c52b019ab0fa92",
                 tags: $scope.tag,
                 format: 'json',
-                per_page: 20,
+                per_page: 24,
                 nojsoncallback: 1
             };
              $http({
