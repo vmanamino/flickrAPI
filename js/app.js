@@ -4,6 +4,9 @@ angular.module("myApp", ['ngAnimate'])
 })
     .controller("myCtrl", function($scope, $http, $sce, $q, $timeout){
         
+        $scope.displayErrors = 'no';
+        console.log($scope.displayErrors);
+        
         //getting the response
         $scope.getting = false;
         
@@ -25,6 +28,10 @@ angular.module("myApp", ['ngAnimate'])
 	    };
 	    
 	    $scope.flickr = function(){
+	        $scope.displayErrors = 'no';
+	        if (!$scope.query){
+	            $scope.displayErrors = '';
+	        }
 	        $scope.tag = $scope.query;
 	        console.log($scope.tag);
             $scope.query = '';
