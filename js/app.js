@@ -28,6 +28,7 @@ angular.module("myApp", ['ngAnimate'])
 	    };
 	    
 	    $scope.flickr = function(){
+	        $scope.getting = false;
 	        $scope.displayErrors = 'no';
 	        if (!$scope.query){
 	            $scope.displayErrors = '';

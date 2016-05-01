@@ -17,16 +17,18 @@
             <input id="query" type="text" ng-model="query" name="query"/><input id="submit" type="submit" name="submit" value="+"/>
         </form>
     </div>
-    <div class="count" ng-if="results">
-        <div class="loading" ng-if="getting">
+    <div class="count">
+        <div class="loading" ng-if="getting && displayErrors">
             <div class="inner"></div>
         </div>
-        <p>Got {{results.length}} results for " {{ tag }} "</p>
+        <div ng-if="results && displayErrors">
+            <p>Got {{results.length}} results for " {{ tag }} "</p>
+        </div>
     </div>
     <div class="errors" ng-hide="displayErrors">
         <p>Please enter a search tag!</p>
     </div>
-    <div class="results" ng-if="results">
+    <div class="results" ng-if="results && displayErrors">
         <ul class="display">
             <li ng-repeat="result in results"><img ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" alt="flickr photo" width="300px" height="200px"/></li>
         </ul>
