@@ -7,8 +7,8 @@ angular.module("myApp", ['ngAnimate'])
         $scope.displayErrors = 'no';
         console.log($scope.displayErrors);
         
-        //getting the response
-        $scope.getting = false;
+        //received the response
+        $scope.received = false;
         
         // delay disappearance of loading bar
         var wait = function(){
@@ -28,7 +28,7 @@ angular.module("myApp", ['ngAnimate'])
 	    };
 	    
 	    $scope.flickr = function(){
-	        $scope.getting = false;
+	        $scope.received = false;
 	        $scope.displayErrors = 'no';
 	        if (!$scope.query){
 	            $scope.displayErrors = '';
@@ -59,9 +59,9 @@ angular.module("myApp", ['ngAnimate'])
             function(response){
                 alert("error");
             };
-            $scope.getting = true;
+            $scope.received = true;
             wait().then(function(){
-                $scope.getting = false;
+                $scope.received = false;
             });
 	    };
         
